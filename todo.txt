@@ -221,3 +221,5 @@ If no symbolic name is provided in the define then that class isn't exactly "exp
 -Re-visit keyboard shortcut handling.
 -Make place component smarter
 -Handle z-ordering on slides
+
+git add -f --all build/
