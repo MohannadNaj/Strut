@@ -24,15 +24,17 @@ function(View, DeckUtils, ItemImportModal, ColorChooserModal, lang) {
 		this._view.$el.on('click', '.thumbnail', this._setBackground);
 
 		this._setBackgroundImage = this._setBackgroundImage.bind(this);
+
+		this._imageChooserModal = ItemImportModal.get({
+			tag: 'img',
+			name: lang.image,
+			title: lang.insert_image,
+			editorModel: this._editorModel,
+			icon: 'glyphicon glyphicon-picture',
+			browsable: true
+		});
 	}
 
-	var imageChooserModal = ItemImportModal.get({
-		tag: 'img',
-		name: lang.image,
-		title: lang.insert_image,
-		icon: 'glyphicon glyphicon-picture',
-		browsable: true
-	});
 	var colorChooserModal = new ColorChooserModal();
 	colorChooserModal.render();
 	$('#modals').append(colorChooserModal.$el);
@@ -71,7 +73,7 @@ function(View, DeckUtils, ItemImportModal, ColorChooserModal, lang) {
 			var allSlides = $(e.currentTarget).parent().parent().is('.allSlides');
 			if (bg == 'bg-img') {
 				var self = this;
-				imageChooserModal.show(function(src) {
+				this._imageChooserModal.show(function(src) {
 					self._setBackgroundImage(allSlides, src);
 				});
 				return;

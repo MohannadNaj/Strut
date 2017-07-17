@@ -1,0 +1,29 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title">{{#lang 'settings'}}{{/lang}}</h4>
+		</div>
+		<div class="modal-body">
+			<div class="form-group">
+				<div class="checkbox">
+				  <label style="width: 100%">
+					  <input type="checkbox" id="useImgur" value="1" {{checked useImgUr}}>
+					  {{#lang 'useImgUr'}}{{/lang}}
+				  </label>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="checkbox">
+				  <label style="width: 100%">
+					  <input type="checkbox" id="useHint" value="1" {{checked useHint}}>
+					  Show usage hint at presentation beginning
+				  </label>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">{{#lang 'close'}}{{/lang}}</button>
+		</div>
+	</div>
+</div>

@@ -184,7 +184,10 @@ Handlebars.registerHelper('log', function(context, options) {
   var level = options.data && options.data.level != null ? parseInt(options.data.level, 10) : 1;
   Handlebars.log(level, context);
 });
-;
+
+Handlebars.registerHelper('checked', function(currentValue) {
+    return currentValue == null || currentValue == false || currentValue == '0' || currentValue == "" ? '': ' checked="checked"';
+});
 // lib/handlebars/utils.js
 
 var errorProps = ['description', 'fileName', 'lineNumber', 'message', 'name', 'number', 'stack'];

@@ -132,7 +132,17 @@ define(['libs/backbone',
 			},
 
 			deck: function() {
-				return this._deck;
+				var deck = this._deck;
+				var settings = this.registry.getBest('strut.settings');
+
+				if(settings)
+					settings = settings.model.loadedSettings;
+				else
+					settings = [];
+
+				deck.attributes.settings = settings;
+
+				return deck;
 			},
 
 			cannedTransition: function(c) {

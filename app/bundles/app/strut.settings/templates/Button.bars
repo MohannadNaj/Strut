@@ -1,0 +1,4 @@
+	<button class="btn btn-plast act">
+	<i class="glyphicon glyphicon-asterisk icon-white"/>
+	{{#lang 'settings'}}{{/lang}}
+	</button>

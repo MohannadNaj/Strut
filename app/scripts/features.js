@@ -21,7 +21,8 @@ define([
 	'strut/well_context_buttons/main',
 	'tantaman/web/local_storage/main',
 	// 'tantaman/web/remote_storage/main',
-	'strut/startup/main'
+	'strut/startup/main',
+	'strut/settings/main'
 	],
 function(ServiceRegistry) {
 	var registry = new ServiceRegistry();

@@ -15,7 +15,6 @@ function(Backbone, Imgup) {
 		'https://': true,
 		'https:': true
 	};
-
 	var Modal = Backbone.View.extend({
 		className: "itemGrabber modal hide",
 		events: {
@@ -49,6 +48,26 @@ function(Backbone, Imgup) {
 			this._switchToProgress();
 			this.item.src = '';
 
+			var settings = this._editorModel.registry.getBest('strut.settings');
+
+			if(settings == null || settings.model.load('useImgUr') ) {
+				this.ImgUrUpload(f, reader, _this, e);			
+			} else {
+				this.base64Upload(f, reader, _this);				
+			}
+		},
+		base64Upload: function(f, reader, _this) {
+			reader = new FileReader();
+			reader.onload = function(e) {
+			  _this.$input.val(e.target.result);
+			  _this.urlChanged({
+			    which: -1
+			  });
+			};
+			reader.readAsDataURL(f);
+			_this._switchToThumbnail();
+		},
+		ImgUrUpload: function(f, reader, _this, e) {
 			imgup.upload(f).progress(function(ratio) {
 				_this._updateProgress(ratio);
 			}).then(function(result) {
@@ -62,16 +81,6 @@ function(Backbone, Imgup) {
 				_this._switchToThumbnail();
 				_this.$input.val('Failed to upload image to imgur');
 			});
-
-			
-			// reader = new FileReader();
-			// reader.onload = function(e) {
-			//   _this.$input.val(e.target.result);
-			//   _this.urlChanged({
-			//     which: -1
-			//   });
-			// };
-			// reader.readAsDataURL(f);
 		},
 		browseClicked: function() {
 			return this.$el.find('input[type="file"]').click();
@@ -148,7 +157,8 @@ function(Backbone, Imgup) {
 
 			return this.$el;
 		},
-		constructor: function ItemImportModal() {
+		constructor: function ItemImportModal(options) {
+		this._editorModel = options['editorModel'];
 		Backbone.View.prototype.constructor.apply(this, arguments);
 	}
 	});
