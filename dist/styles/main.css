@@ -1334,6 +1334,9 @@ ul.navbar-nav {
   left: -60px;
 }
 
+.popover input {
+  color: #000000;
+}
 .themedArea div, .themedArea span, .themedArea applet, .themedArea object, .themedArea iframe,
 .themedArea h1, .themedArea h2, .themedArea h3, .themedArea h4, .themedArea h5, .themedArea h6, .themedArea p, .themedArea blockquote, .themedArea pre,
 .themedArea a, .themedArea abbr, .themedArea acronym, .themedArea address, .themedArea big, .themedArea cite, .themedArea code,

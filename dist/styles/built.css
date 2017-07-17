@@ -1,15 +1,18 @@
 .etch-editor-panel > div {
   display: inline-block;
+    background: #eaeaea;
+    border: 1px solid #bdbdbd;
 }
 
 .etch-editor-panel {
-  height: 29px; /* Why isn't the height coming out correctly without this? */
+  height: 35px; /* Why isn't the height coming out correctly without this? */
   /*background-image: -moz-linear-gradient(center bottom, #222 0%, #333 100%);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#222));
     border: 1px solid #333;
     */
     box-shadow: inset 1px 0 0 #dfdfdf, inset 0 1px 0 #dfdfdf, inset -1px 0 0 #dfdfdf, inset 0 -1px 0 #dfdfdf, 0 0 5px rgba(0,0,0,.3);
     opacity: 0.8;
+  padding-top: 0px;
 }
 
 .etch-bold {
@@ -163,8 +166,8 @@ included for legacy support of old decks with the defaultbg attribute set.
     padding: 20px;
 }
 
-.bg-surf-grad-black {
-	background-color: #333;
+.bg-surf-grad-black , .bg-surf-grad-black:hover {
+	background: #333 !important;
 	/*background-image: -webkit-radial-gradient(#333, #111);
 	background-image: -moz-radial-gradient(#333, #111);
 	background-image: -ms-radial-gradient(#333, #111);
@@ -172,8 +175,8 @@ included for legacy support of old decks with the defaultbg attribute set.
 	background-image: radial-gradient(#333, #111);*/
 }
 
-.bg-surf-grad-light {
-	background-color: #FFF;
+.bg-surf-grad-light , .bg-surf-grad-light:hover {
+	background: #FFF !important;
 	/*background-image: -webkit-radial-gradient(#FFF, #DDD);
 	background-image: -moz-radial-gradient(#FFF, #DDD);
 	background-image: -ms-radial-gradient(#FFF, #DDD);
@@ -181,8 +184,8 @@ included for legacy support of old decks with the defaultbg attribute set.
 	background-image: radial-gradient(#FFF, #DDD);*/
 }
 
-.bg-surf-grad-smoke {
-	background-color: #EEE;
+.bg-surf-grad-smoke , .bg-surf-grad-smoke:hover {
+	background: #EEE !important;
 	/*background-image: -webkit-radial-gradient(#EEE, #CCC);
 	background-image: -moz-radial-gradient(#EEE, #CCC);
 	background-image: -ms-radial-gradient(#EEE, #CCC);
@@ -190,8 +193,8 @@ included for legacy support of old decks with the defaultbg attribute set.
 	background-image: radial-gradient(#EEE, #CCC);*/
 }
 
-.bg-surf-grad-orange {
-	background-color: #945353;
+.bg-surf-grad-orange , .bg-surf-grad-orange:hover {
+	background: #945353 !important;
 	/*background-image: -webkit-radial-gradient(#945353, #774040);
 	background-image: -moz-radial-gradient(#945353, #774040);
 	background-image: -ms-radial-gradient(#945353, #774040);
@@ -199,8 +202,8 @@ included for legacy support of old decks with the defaultbg attribute set.
 	background-image: radial-gradient(#945353, #774040);*/
 }
 
-.bg-surf-grad-yellow {
-	background-color: #cfb98c;
+.bg-surf-grad-yellow , .bg-surf-grad-yellow:hover {
+	background: #cfb98c !important;
 	/*background-image: -webkit-radial-gradient(#cfb98c, #D1B377);
 	background-image: -moz-radial-gradient(#cfb98c, #D1B377);
 	background-image: -ms-radial-gradient(#cfb98c, #D1B377);
@@ -208,8 +211,8 @@ included for legacy support of old decks with the defaultbg attribute set.
 	background-image: radial-gradient(#cfb98c, #D1B377);*/
 }
 
-.bg-surf-grad-darkgreen {
-	background-color: #4a939e;
+.bg-surf-grad-darkgreen , .bg-surf-grad-darkgreen:hover {
+	background: #4a939e !important;
 	/*background-image: -webkit-radial-gradient(#4a939e, #134952);
 	background-image: -moz-radial-gradient(#4a939e, #134952);
 	background-image: -ms-radial-gradient(#4a939e, #134952);
@@ -217,8 +220,8 @@ included for legacy support of old decks with the defaultbg attribute set.
 	background-image: radial-gradient(#4a939e, #134952);*/
 }
 
-.bg-surf-grad-sky {
-	background-color: #5e699c;
+.bg-surf-grad-sky , .bg-surf-grad-sky:hover {
+	background: #5e699c !important;
 	/*background-image: -webkit-radial-gradient(#5e699c, #515E99);
 	background-image: -moz-radial-gradient(#5e699c, #515E99);
 	background-image: -ms-radial-gradient(#5e699c, #515E99);
@@ -226,8 +229,8 @@ included for legacy support of old decks with the defaultbg attribute set.
 	background-image: radial-gradient(#5e699c, #515E99);*/
 }
 
-.bg-surf-grad-lavender {
-	background-color: #554b61;
+.bg-surf-grad-lavender , .bg-surf-grad-lavender:hover {
+	background: #554b61 !important;
 	/*background-image: -webkit-radial-gradient(#554b61, #443C4D);
 	background-image: -moz-radial-gradient(#554b61, #443C4D);
 	background-image: -ms-radial-gradient(#554b61, #443C4D);
@@ -235,8 +238,8 @@ included for legacy support of old decks with the defaultbg attribute set.
 	background-image: radial-gradient(#554b61, #443C4D);*/
 }
 
-.bg-surf-grad-purple {
-	background-color: #775796;
+.bg-surf-grad-purple , .bg-surf-grad-purple:hover {
+	background: #775796 !important;
 	/*background-image: -webkit-radial-gradient(#775796, #6C478F);
 	background-image: -moz-radial-gradient(#775796, #6C478F);
 	background-image: -ms-radial-gradient(#775796, #6C478F);
@@ -244,8 +247,8 @@ included for legacy support of old decks with the defaultbg attribute set.
 	background-image: radial-gradient(#775796, #6C478F);*/
 }
 
-.bg-surf-grad-salmon {
-	background-color: #cfa2a2;
+.bg-surf-grad-salmon , .bg-surf-grad-salmon:hover {
+	background: #cfa2a2 !important;
 	/*background-image: -webkit-radial-gradient(#cfa2a2, #C98D8D);
 	background-image: -moz-radial-gradient(#cfa2a2, #C98D8D);
 	background-image: -ms-radial-gradient(#cfa2a2, #C98D8D);
@@ -253,8 +256,8 @@ included for legacy support of old decks with the defaultbg attribute set.
 	background-image: radial-gradient(#cfa2a2, #C98D8D);*/
 }
 
-.bg-surf-grad-grass {
-	background-color: #6c855d;
+.bg-surf-grad-grass , .bg-surf-grad-grass:hover {
+	background: #6c855d !important;
 	/*background-image: -webkit-radial-gradient(#6c855d, #597847);
 	background-image: -moz-radial-gradient(#6c855d, #597847);
 	background-image: -ms-radial-gradient(#6c855d, #597847);
