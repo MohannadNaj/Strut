@@ -867,6 +867,7 @@ body {
 .component input {
 	width: 25px;
 	height: 22px;
+	font-size: 12px;
 	line-height: 12px;
 }
 
@@ -957,7 +958,16 @@ body {
 	visibility: visible;
 }
 
-
+.z-controls {
+	position: fixed;
+	top: 10px;
+}
+.increase-z {
+	left: 40px;
+}
+.decrease-z {
+	left: 10px;
+}
 .transitionSlideSnapshot {
 	position: absolute;
 	border: 1px solid rgba(0, 0, 0, .1);
