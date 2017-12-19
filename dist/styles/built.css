@@ -968,6 +968,14 @@ body {
 .decrease-z {
 	left: 10px;
 }
+
+.index-badge {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    width: 20px;
+    display: inline-block;
+    font-size: 20px;
+}
 .transitionSlideSnapshot {
 	position: absolute;
 	border: 1px solid rgba(0, 0, 0, .1);
