@@ -2,6 +2,8 @@
 <div class="content"></div>
 </div>
 <span class="topLabel label"> 
+    <span class="z-controls increase-z" title="increase z">▲</span>
+    <span class="z-controls decrease-z" title="decrease z">▼</span>
 	<span class="skewx" data-delta="skewX">↔</span>
 	<span class="align" data-option="x">↹</span>
 </span>

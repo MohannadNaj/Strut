@@ -6,7 +6,8 @@ require.config({
     	jquery: "../scripts/libs/jQuery",
 		jqueryui: "../scripts/libs/jquery-ui",
 		touchpunch: "../scripts/libs/jquery-ui-touch-punch",
-		"jquery.multisortable": "../scripts/libs/jquery.multisortable",
+        "jquery.multisortable": "../scripts/libs/jquery.multisortable",
+		paste: "../scripts/libs/paste",
     	position: "../components/jq-contextmenu/jquery.ui.position",
     	jqContextMenu: "../components/jq-contextmenu/jquery.contextMenu",
     	lodash: "../scripts/libs/lodash",
@@ -64,7 +65,9 @@ require.config({
 		bootstrap: {
 			deps: ["jquery"]
 		},
-
+        paste: {
+            deps: ["jquery"]
+        },
 		"jquery.multisortable": {
 			deps: ["jquery", "jqueryui"]
 		},
@@ -191,6 +194,20 @@ log.notice = function(msg) {
 	if (log.enabled.notice)
 		console.log(msg);
 }
+
+Object.defineProperty(Array.prototype, '_moveByIndex', {
+    enumerable: false,
+    value: function( old_index, new_index) {
+        if (new_index >= this.length) {
+            var k = new_index - this.length;
+            while ((k--) + 1) {
+                this.push(undefined);
+            }
+        }
+        this.splice(new_index, 0, this.splice(old_index, 1)[0]);
+        return this; // for testing purposes
+    }
+});
 
 // reassigning rquire to r for
 // the "preview" includes so they don't get built into the actual

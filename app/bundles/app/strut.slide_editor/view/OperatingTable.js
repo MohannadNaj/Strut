@@ -38,6 +38,7 @@ function(Backbone, empty, ComponentFactory, GlobalEvents, Component,
 			GlobalEvents.on('copy', this._copy, this);
 			GlobalEvents.on('paste', this._paste, this);
 			GlobalEvents.on('delete', this._delete, this);
+			GlobalEvents.on('renderContents', this._renderContents, this);
 
 			this._clipboard = this._editorModel.clipboard;
 

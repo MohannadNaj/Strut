@@ -30,6 +30,38 @@ function(mousetrap, Backbone) {
 		result.trigger('redo', e);
 	});
 
+	mousetrap.bind(['down'], function(e) {
+		result.trigger('moveDown', e, 10);
+	});
+
+	mousetrap.bind(['up'], function(e) {
+		result.trigger('moveUp', e, 10);
+	});
+
+	mousetrap.bind(['right'], function(e) {
+		result.trigger('moveRight', e, 10);
+	});
+
+	mousetrap.bind(['left'], function(e) {
+		result.trigger('moveLeft', e, 10);
+	});
+
+	mousetrap.bind(['shift+down'], function(e) {
+		result.trigger('moveDown', e);
+	});
+
+	mousetrap.bind(['shift+up'], function(e) {
+		result.trigger('moveUp', e);
+	});
+
+	mousetrap.bind(['shift+right'], function(e) {
+		result.trigger('moveRight', e);
+	});
+
+	mousetrap.bind(['shift+left'], function(e) {
+		result.trigger('moveLeft', e);
+	});
+
 
 	$(window).blur(function() {
 		var keys = Object.keys(result.pressed);

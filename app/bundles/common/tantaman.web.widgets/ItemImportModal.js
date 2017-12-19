@@ -1,8 +1,8 @@
 /*
 @author Matt Crinklaw-Vogt
 */
-define(['libs/backbone', 'libs/imgup'],
-function(Backbone, Imgup) {
+define(['libs/backbone', 'libs/imgup', 'paste'],
+function(Backbone, Imgup, pasteJs) {
 	var modalCache = {};
 	var reg = /[a-z]+:/;
 	var imgup = new Imgup('847de02274cba30');
@@ -27,6 +27,19 @@ function(Backbone, Imgup) {
 		},
 		initialize: function() {
 			this.loadItem = _.debounce(this.loadItem.bind(this), 200);
+			if(this.options.tag === 'img')
+				this.bindPaste()
+		},
+		bindPaste: function() {
+			$(document).ready(function() {
+				$(this.$el).find('.modal-body').pastableNonInputable();
+				$(this.$el).find('.modal-body').on('pasteImage', function (ev, data){
+				  this.$input.val(data.dataURL);
+				  setTimeout(function() {
+				  	this.loadItem();
+				  }.bind(this), 1)
+				}.bind(this));
+			}.bind(this))
 		},
 		show: function(cb) {
 			this.cb = cb;
