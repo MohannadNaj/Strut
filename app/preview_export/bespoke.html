@@ -52,9 +52,13 @@
 	    width: 100%;
 	    height: 100%;
 	}
+	.bespoke-bullet{-webkit-transition:all .3s ease;transition:all .3s ease}@media print{.bespoke-bullet{-webkit-transition:none;transition:none}}.bespoke-bullet-inactive{opacity:0}li.bespoke-bullet-inactive{-webkit-transform:translateX(16px);transform:translateX(16px)}@media print{li.bespoke-bullet-inactive{-webkit-transform:none;transform:none}}@media print{.bespoke-bullet-inactive{opacity:1}}.bespoke-bullet-active{opacity:1}
 	</style>
 
 	<script src="bespoke/scripts/bespoke.js"></script>
+	<script>
+		var options = '.bullet'
+	</script>
 	<script src="bespoke/scripts/bespoke-plugins.js"></script>
 	<script src="scripts/onready.js"></script>
 	<script src="scripts/loadPresentation.js"></script>
@@ -65,7 +69,8 @@
 		if (!window.presStarted) {
     		bespoke.horizontal.from('article', {
     			hash: true,
-    			state: true
+    			state: true,
+    			bullet: true
     		});
 		}
 	});

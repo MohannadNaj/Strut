@@ -75,6 +75,7 @@ define(["libs/backbone",
 				this.model.on("drag", this.drag, this);
 				this.model.on("dragStop", this.dragStop, this);
 
+				this.model.set('_index', this._getComponentIndex())
 
 				key.on("moveDown", _.debounce(this._moveDown, 100), this);
 				key.on("moveUp", _.debounce(this._moveUp, 100), this);
@@ -641,6 +642,7 @@ define(["libs/backbone",
 				if(newIndex < slideComponents.length) {
 					slideComponents._moveByIndex(oldIndex, newIndex);
 				}
+				this._unrender()
 				key.trigger('renderContents') // key = GlobalEvents !
 				this.$el.trigger("focused")
 			},
@@ -651,6 +653,7 @@ define(["libs/backbone",
 				if(newIndex >= 0) {
 					slideComponents._moveByIndex(oldIndex, newIndex);
 				}
+				this._unrender()
 				key.trigger('renderContents') // key = GlobalEvents !
 				this.$el.trigger("focused")
 			},

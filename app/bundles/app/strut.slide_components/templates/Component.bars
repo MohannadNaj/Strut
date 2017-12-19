@@ -5,6 +5,7 @@
     <span class="z-controls increase-z" title="increase z">▲</span>
     <span class="z-controls decrease-z" title="decrease z">▼</span>
 	<span class="skewx" data-delta="skewX">↔</span>
+	<span class="index-badge">{{_index}}</span>
 	<span class="align" data-option="x">↹</span>
 </span>
 <span class="leftLabel label"> 
