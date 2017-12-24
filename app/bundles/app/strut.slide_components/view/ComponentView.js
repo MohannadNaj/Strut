@@ -75,7 +75,8 @@ define(["libs/backbone",
 				this.model.on("drag", this.drag, this);
 				this.model.on("dragStop", this.dragStop, this);
 
-				this.model.set('_index', this._getComponentIndex())
+				if(this.model.slide != null)
+					this.model.set('_index', this._getComponentIndex())
 
 				key.on("moveDown", _.debounce(this._moveDown, 100), this);
 				key.on("moveUp", _.debounce(this._moveUp, 100), this);

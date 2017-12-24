@@ -2,8 +2,10 @@ define(['./BackgroundProvider',
 		'./AvailableBackgrounds',
 		'./AvailableSurfaces',
 		'./StylesheetProvider',
-		'./ClassEditor'],
-function(BackgroundProvider, Backgrounds, Surfaces, StylesheetProvider, ClassEditor) {
+		'./ClassEditor',
+		'./SubstepEditor',
+		],
+function(BackgroundProvider, Backgrounds, Surfaces, StylesheetProvider, ClassEditor, SubstepEditor) {
 	'use strict';
 
 	var slideBgProviderFactory = {
@@ -39,6 +41,12 @@ function(BackgroundProvider, Backgrounds, Surfaces, StylesheetProvider, ClassEdi
 	var classEditorFactory = {
 		create: function(editorModel) {
 			return new ClassEditor(editorModel);
+		}
+	};
+
+	var substepEditorFactory = {
+		create: function(editorModel) {
+			return new SubstepEditor(editorModel);
 		}
 	};
 
@@ -87,6 +95,17 @@ function(BackgroundProvider, Backgrounds, Surfaces, StylesheetProvider, ClassEdi
 					overflow: true
 				}
 			}, classEditorFactory);
+
+			registry.register({
+				interfaces: 'strut.ThemeProvider',
+				meta: {
+					modes: {
+						'overview': false,
+						'slide-editor': true
+					},
+					overflow: true
+				}
+			}, substepEditorFactory);
 
 			/*
 			registry.register({

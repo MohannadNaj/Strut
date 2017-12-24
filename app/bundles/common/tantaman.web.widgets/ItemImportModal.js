@@ -34,10 +34,18 @@ function(Backbone, Imgup, pasteJs) {
 			$(document).ready(function() {
 				$(this.$el).find('.modal-body').pastableNonInputable();
 				$(this.$el).find('.modal-body').on('pasteImage', function (ev, data){
-				  this.$input.val(data.dataURL);
-				  setTimeout(function() {
-				  	this.loadItem();
-				  }.bind(this), 1)
+                    this._switchToProgress();
+                    this.item.src = '';
+                    var settings = this._editorModel.registry.getBest('strut.settings');
+
+                    if(settings == null || settings.model.load('useImgUr') ) {
+                        this.ImgUrUpload(data.blob, null, this, null);          
+                    } else {
+    				  this.$input.val(data.dataURL);                        
+    				  setTimeout(function() {
+    				  	this.loadItem();
+    				  }.bind(this), 1)
+                    }
 				}.bind(this));
 			}.bind(this))
 		},

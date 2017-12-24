@@ -68,7 +68,9 @@ define(["libs/backbone",
 					}
 				}, this);
 			},
-
+			selectAllComponents: function(e) {
+				this.selectComponents(this.get('components'));
+			},
 			/**
 			 * React on slide being unrendered.
 			 */

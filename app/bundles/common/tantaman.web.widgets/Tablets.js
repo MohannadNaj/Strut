@@ -20,7 +20,7 @@ function() {
 			this._currentItems.forEach(function(item) {
 				this.$content.append(item.render().$el);
 			}, this);
-
+			this.toggle();
 			return this;
 		},
 

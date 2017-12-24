@@ -21,6 +21,22 @@
 				  </label>
 				</div>
 			</div>
+			<div class="form-group">
+				<div class="checkbox">
+				  <label style="width: 100%">
+					  <input type="checkbox" id="hideSlideWhileNavigating" value="1" {{checked hideSlideWhileNavigating}}>
+					  {{#lang 'hideSlideWhileNavigating'}}{{/lang}}
+				  </label>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="checkbox">
+				  <label style="width: 100%">
+					  <input type="checkbox" id="keepShownSubsteps" value="1" {{checked keepShownSubsteps}}>
+					  {{#lang 'keepShownSubsteps'}}{{/lang}}
+				  </label>
+				</div>
+			</div>
 		</div>
 		<div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">{{#lang 'close'}}{{/lang}}</button>

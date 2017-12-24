@@ -62,6 +62,11 @@ function(mousetrap, Backbone) {
 		result.trigger('moveLeft', e);
 	});
 
+	mousetrap.bind(['ctrl+a'], function(e) {
+		result.trigger('selectAll', e);
+		e.preventDefault();
+	});
+
 
 	$(window).blur(function() {
 		var keys = Object.keys(result.pressed);

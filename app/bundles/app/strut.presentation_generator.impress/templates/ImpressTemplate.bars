@@ -46,13 +46,29 @@
 		{{/attributes}}
 		</div>
 	{{/slides.models}}
-	<div id="overview" class="step" data-state="strut-slide-overview" data-x="{{#scaleX overviewX}}{{/scaleX}}" data-y="{{#scaleY overviewY}}{{/scaleY}}" data-scale="9"></div>
+	<div id="overview" class="step" data-state="strut-slide-overview" data-x="{{#scaleX overviewX}}{{/scaleX}}" data-y="{{#scaleY overviewY}}{{/scaleY}}" data-scale="15"></div>
 	{{/attributes}}
 </div>
 {{#if attributes.settings.useHint}}
 <div class="hint">
     <p>Use a spacebar or arrow keys to navigate</p>
 </div>
+{{/if}}
+{{#if attributes.settings.hideSlideWhileNavigating}}
+<style>
+.impress-enabled .step {
+    opacity: 0;
+}
+
+.impress-on-overview .step, .impress-enabled .step.active {
+    opacity: 1;
+}
+</style>
+{{/if}}
+{{#if attributes.settings.keepShownSubsteps}}
+<style id="keepShownSubsteps">
+.substep.substep-shown { opacity: 1; }
+</style>
 {{/if}}
 </div>
 </div>

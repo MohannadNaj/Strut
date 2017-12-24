@@ -53,10 +53,12 @@ define(['libs/backbone',
 				this._cmdList = CmdListFactory.managedInstance('editor');
 				GlobalEvents.on('undo', this._cmdList.undo, this._cmdList);
 				GlobalEvents.on('redo', this._cmdList.redo, this._cmdList);
-
+				GlobalEvents.on('selectAll', _.debounce(this.selectAllComponents, 100), this);
 				Backbone.on('etch:state', this._fontStateChanged, this);
 			},
-
+			selectAllComponents: function(e) {
+				this.activeSlide().selectAllComponents();
+			},
 			changeActiveMode: function(modeId) {
 				if (modeId != this.get('modeId')) {
 					this.set('modeId', modeId);
