@@ -68,10 +68,18 @@
 	border-radius: 0;
 }
 
+.tablets-content > :last-child {
+	border-radius: 0 0 4px 4px;
+}
+
 /*TODO: move tablets css*/
 .tablets.hiding .tablets-content {
 	height: 0px;
 	overflow: hidden;
+}
+
+.tablets.showing .tablets-toggle {
+	border-radius: 0;
 }
 
 .tablets.showing .caret {
@@ -609,7 +617,7 @@ line-height: normal;
 }
 
 .wellContextMenu {
-  /*z-index: 2;*/
+  z-index: 2;
 }
 
 .slideWell {
@@ -975,6 +983,22 @@ body {
     width: 20px;
     display: inline-block;
     font-size: 20px;
+}
+
+.ui-selected .substep {
+	box-shadow: 10px 10px 25px 0px rgba(0, 0, 0, 0.1);
+}
+
+.ui-selected .substep:after {
+	content: "\e104";
+	font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    position: absolute;
+    bottom: 0px;
+	font-size: 10px;
+	color: rgba(0, 0, 0, 0.5);
 }
 .transitionSlideSnapshot {
 	position: absolute;

@@ -344,3 +344,6 @@ body {
     Thanks for reading. I hope you enjoyed it at least as much as I enjoyed writing it
     for you.
 */
+body {
+  font-family: "Lato", sans-serif;
+}
